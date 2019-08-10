@@ -1,0 +1,125 @@
+<style lang="less">
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+</style>
+
+<script>
+import wepy from '@wepy/core';
+import eventHub from './common/eventHub';
+import vuex from '@wepy/x';
+import 'wepy-async-function'
+
+wepy.use(vuex);
+
+wepy.app({
+
+  hooks: {
+    // App 级别 hook，对整个 App 生效
+    // 同时存在 Page hook 和 App hook 时，优先执行 Page hook，返回值再交由 App hook 处
+    'before-setData': function (dirty) {
+      console.log('setData dirty: ', dirty);
+      return dirty;
+    }
+  },
+
+  globalData: {
+    userInfo: null
+  },
+
+  onLaunch() {
+    this.testAsync();
+    eventHub.$on('app-launch', (...args) => {
+      console.log('app-launch event emitted, the params are:');
+      console.log(args);
+    });
+
+    //api 版本检测
+    // const version = wx.getSystemInfoSync().SDKVersion;
+    // if (compareVersion(version, '1.1.0') >= 0) {
+    //   wx.openBluetoothAdapter()
+    // } else {
+    //   // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+    //   })
+    // }
+
+    console.log('promisify test! ');
+      let mypro = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("promisify success");
+        }, 2000);
+      });
+      mypro.then((r)=>{
+        console.log(r);
+      })
+  },
+
+  methods: {
+
+    sleep (s) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('promise resolved')
+        }, s * 1000)
+      })
+    },
+
+    async testAsync () {
+      let d = await this.sleep(3);
+      console.log(d);
+    }
+  }
+});
+</script>
+<config>
+{
+    pages: [
+      'pages/card/index',
+      'pages/card/show',
+      'pages/index'
+    ],
+    permission:{
+      "scope.userLocation": {
+        "desc": '你的位置信息将用于本地化服务，请点击同意，否则无法使用'
+      }
+    },
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    },
+    "tabBar": {
+      "color": "#999999",
+      "selectedColor": "#ff6a3c",
+      "backgroundColor": "#ffffff",
+      "borderStyle": "black",
+      "list": [{
+        "pagePath": "pages/index",
+        "text": "测试",
+        "iconPath": "/images/icon_home.png",
+        "selectedIconPath": "images/icon_home_active.png"
+      },  
+      {
+        "pagePath": "pages/index",
+        "text": "翻红包",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_active.png"
+      },  
+       {
+        "pagePath": "pages/index",
+        "text": "我",
+        "iconPath": "images/icon_info.png",
+        "selectedIconPath": "images/icon_info_active.png"
+      }]
+    }
+}
+</config>

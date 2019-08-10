@@ -1,0 +1,81 @@
+
+<style lang="less">
+video{
+  width: 100%;
+  border: 3px solid white;
+  box-sizing: border-box;
+}
+.all{
+  width: 100%;
+  background: black;
+
+}
+.txt{
+  width: 70%;
+  color: #B8B2AC;
+  margin: 10px auto;
+}
+.comment{
+  width: 100%;
+  color: #ACB2B8;
+}
+.pz{
+  width: 70%;
+  color: #B8B2AC;
+   margin: 10px auto;
+}
+.common{
+  width: 100%;
+  text-align: center;
+  color: #66C0F4;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 0 ;
+}
+.clas{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+</style>
+
+<template>
+     <view class="all">
+<video src="{{videoUrl}}" ></video>
+<view class="txt-head common">游戏介绍</view>
+<view class="txt">{{txt}}</view>
+<view class="txt-head common">配置要求</view>
+<view class="pz">{{configuration}}</view>
+</view>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+
+  wepy.page({
+    data:{
+      videoUrl:"http://cdn.steamstatic.com.8686c.com/steam/apps/256669280/movie480.webm?t=1472090901",
+      imgUrl:"http://cdn.steamstatic.com.8686c.com/steam/apps/588650/header.jpg?t=1494863475",
+        txt:"成为有史以来最著名的侦探：夏洛克•福尔摩斯！利用你们惊人的侦探才华破解五个令人毛骨悚然的不同罪案：谋杀、寻人、惊天盗窃，调查有时会把你们引入光怪陆离的世界。",
+      configuration:"操作系统: Windows 7 64 Bit / Windows 8.1 64 Bit / Windows 10 64 Bit处理器: INTEL Core i5 2100 3.1 GHZ / AMD A8-7600 3.1 GHz内存: 8 GB RAM图形: 2048MB 100% DirectX 11 compatible ATI R9 270X / NVIDIA GeForce 760 GTX or higherDirectX 版本: 11存储空间: 需要 20 GB 可用空间声卡: DirectX Compatible",
+        gamecomment: [
+        {img: 'http://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/avatars/73/73193914d96b5f267e68dcdb024dc4f7bf47efa7.jpg', time: '1.6', comment:'太短！！！！新人一定要知道白色圈圈就是有线索要看或者还没看！！绿色圈圈就是线索找齐了！！不然一直卡关！！！'},
+        {img:"http://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/avatars/0c/0ca12ab0026a2e3bf83c98eb73da53d5c03571e6.jpg",time:"10.3",comment:'很好玩的一款游戏，至少对于我来说，已经做得很不错了游戏剧情设计的不错，虽说有的案件确实是一眼就能看出凶手，但推理游戏享受的不是结果而是过程不是'},
+        {img:"http://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/avatars/14/1402674912771f2c0d4735ded358b28c9d7ab791.jpg",time:0.5,comment:"买了这款游戏，然后就退款了。和第一部是一个毛病，当人物超出地图允许的活动范围是，采取的是将人物闪回并转换视角的方式。结果就是，不晕cs，不晕半条命，不晕传送门的我，晕倒想死。第一部是强撑着玩到结局的，第二部是真不行了。所以，你要是容易3d晕眩的话，这款游戏不是很适合你。"},
+        {img:"http://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/avatars/19/1913020adff7c6c71e0c9e88766ee0c7cd67a3a5.jpg",time:14.5,comment:"看了别人的评测发现，原来是墙的锅……好吧==============================================机翻，但是有中文总比没有强，绝大部分不影响解谜，个别地方需要切回英文。就算全低特效，场景切换也卡得要命（i7-4790，GTX970，8G，机械硬盘）。不知道因为我没把游戏存到固态里，还是内存捉急了。所有案件的结局并没有正确选项（虽然有的是可能性极小极小的），对于我这种强迫症来说简直要吐血……最低难度通一遍即可全程就。第一次玩这个系列，最低难度不跳谜题，我用了12小时通关（卡成狗……）。考虑等打折入手前作。"},
+        {img:"http://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/avatars/b1/b16f8967130f366dddf5c926c836195193e5ff5f.jpg",time:0.7,comment:"垃圾游戏"},
+        {img:"http://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/avatars/e4/e4b36519ab63e8942823cf550f255d00309c4cdd.jpg",time:11.9,comment:"这种如跗骨之蛆的卡顿换别的游戏我早就给差评了但冲着二线小厂特意加的简中我也要给好评PS：卡顿应该不是我电脑配置问题找到方法了，挂vpn玩就不卡（本人亲测），并不是制作组的锅，目测应该是万能的墙把上传的统计数据给墙了所以卡顿，同理断网应该也不会卡，所以不要刷差评了，和制作组没关系阿"}]
+
+    }
+
+})
+</script>
+<config>
+{
+    navigationBarTitleText: 'show ad',
+    usingComponents: {
+
+    }
+}
+</config>
+
