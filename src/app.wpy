@@ -64,27 +64,29 @@ wepy.app({
 
   methods: {
 
-    sleep (s) {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve('promise resolved')
-        }, s * 1000)
-      })
-    },
+    // sleep (s) {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       resolve('promise resolved')
+    //     }, s * 1000)
+    //   })
+    // },
 
-    async testAsync () {
-      let d = await this.sleep(3);
-      console.log(d);
-    }
+    // async testAsync () {
+    //   let d = await this.sleep(3);
+    //   console.log(d);
+    // }
+
   }
 });
 </script>
 <config>
 {
     pages: [
+      'pages/index',
       'pages/card/index',
       'pages/card/show',
-      'pages/index'
+      'pages/user/index',
     ],
     permission:{
       "scope.userLocation": {
@@ -105,20 +107,20 @@ wepy.app({
       "list": [{
         "pagePath": "pages/index",
         "text": "测试",
-        "iconPath": "/images/icon_home.png",
-        "selectedIconPath": "images/icon_home_active.png"
-      },  
+        "iconPath": "@/images/icon_home.png",
+        "selectedIconPath": "@/images/icon_home_active.png"
+      },
       {
-        "pagePath": "pages/index",
+        "pagePath": "pages/card/index",
         "text": "翻红包",
-        "iconPath": "images/icon_home.png",
-        "selectedIconPath": "images/icon_home_active.png"
-      },  
+        "iconPath": "@/images/icon_home.png",
+        "selectedIconPath": "@/images/icon_home_active.png"
+      },
        {
-        "pagePath": "pages/index",
+        "pagePath": "pages/user/index",
         "text": "我",
-        "iconPath": "images/icon_info.png",
-        "selectedIconPath": "images/icon_info_active.png"
+        "iconPath": "../../images/icon_info.png",
+        "selectedIconPath": "../../images/icon_info_active.png"
       }]
     }
 }

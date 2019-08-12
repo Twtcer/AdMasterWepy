@@ -13,7 +13,7 @@ module.exports = {
       '@': path.join(__dirname, 'src')
     },
     aliasFields: ['wepy', 'weapp'],
-    modules: ['node_modules']
+    modules: ['node_modules', 'utils']
   },
   compilers: {
     less: {

@@ -136,16 +136,20 @@ module.exports.getTime = getTime;
       </slide-view>
      </panel>
     <!--toast /-->
+    <panel>
+    <div>admaster:{{test}}</div>
+  </panel>
   </div>
+
 </template>
 
 <script>
   import wepy from '@wepy/core'
-  import eventHub from '../common/eventHub';
+  // import eventHub from '../common/eventHub';
   import { mapState } from '@wepy/x';
   import store from '../store';
-  import testMixin from '../mixins/test';
-
+  // import testMixin from '../mixins/test';
+import api from '@/api/api';
 
   wepy.page({
     store,
@@ -167,9 +171,10 @@ module.exports.getTime = getTime;
 
 
 
-    mixins: [testMixin],
+    // mixins: [testMixin],
 
     data: {
+      test:'',
       inputmodel: 'v-model',
       mynum: 20,
       userInfo: {
@@ -259,7 +264,7 @@ module.exports.getTime = getTime;
         counters[0].num++;
         counters[1].num--;
 
-        eventHub.$emit('app-launch', {a: 1}, {b: 2});
+        // eventHub.$emit('app-launch', {a: 1}, {b: 2});
       },
       request () {
         let self = this
@@ -300,8 +305,24 @@ module.exports.getTime = getTime;
 
       //location
 
+    // test
+    debugger
+this.test();
+    },
+    onLoad()
+    {
+ debugger
+this.test();
+    },
+
+ async test()
+    {
+      debugger
+      var json = await api.test();
+    this.test =json.result.test;
     }
   });
+
 </script>
 <config>
 {

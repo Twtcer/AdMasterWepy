@@ -20,3 +20,10 @@ export const SYSTEM_INFO = "systemInfo";
 export const ADDRESS_ID = "addressId";
 
 export const SEL_CLASS_CODE = "selClassCode";
+
+/**
+ * Api Url
+ * @type {String}
+ */
+export const API_URL = "http://mini.frp.quick360.tech/";
+export const API_URL_TEST = "http://localhost:9216/";
