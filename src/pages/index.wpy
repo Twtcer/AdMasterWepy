@@ -145,11 +145,11 @@ module.exports.getTime = getTime;
 
 <script>
   import wepy from '@wepy/core'
-  // import eventHub from '../common/eventHub';
+  import eventHub from '../common/eventHub';
   import { mapState } from '@wepy/x';
   import store from '../store';
   // import testMixin from '../mixins/test';
-import api from '@/api/api';
+  import api from '@/utils/api';
 
   wepy.page({
     store,

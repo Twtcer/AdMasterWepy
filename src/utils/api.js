@@ -1,5 +1,5 @@
-import wxRequest from '@utils/wxRequest'
-import {config} from '@utils/constant'
+import wxRequest from './wxRequest'
+import config from './constant'
 
 let debug = true
 const apiUrl = (debug === true ? config.API_URL_TEST : config.API_URL)

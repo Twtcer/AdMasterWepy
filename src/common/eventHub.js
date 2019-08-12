@@ -1,5 +1,6 @@
-// import wepy from '@wepy/core'
+import wepy from '@wepy/core'
 
-// let eventHub = new wepy()
+// eslint-disable-next-line new-cap
+let eventHub = new wepy()
 
-// export default eventHub
+export default eventHub

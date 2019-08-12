@@ -10,9 +10,9 @@
 </style>
 
 <script>
-import wepy from '@wepy/core';
-import eventHub from './common/eventHub';
-import vuex from '@wepy/x';
+import wepy from '@wepy/core'
+import eventHub from './common/eventHub'
+import vuex from '@wepy/x'
 import 'wepy-async-function'
 
 wepy.use(vuex);
@@ -86,7 +86,7 @@ wepy.app({
       'pages/index',
       'pages/card/index',
       'pages/card/show',
-      'pages/user/index',
+      'pages/user/index'
     ],
     permission:{
       "scope.userLocation": {
