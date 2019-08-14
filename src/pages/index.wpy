@@ -138,6 +138,7 @@ module.exports.getTime = getTime;
     <!--toast /-->
     <panel>
     <div>admaster:{{test}}</div>
+    <button @tap="test" size="mini"> 点我测试 </button>
   </panel>
   </div>
 
@@ -285,7 +286,7 @@ module.exports.getTime = getTime;
       },
       counterEmit (num) {
         console.log(`${this.$is} receive event, the number is: ${num}`);
-      }
+      }, 
     },
 
     created () {
@@ -302,25 +303,18 @@ module.exports.getTime = getTime;
           self.userInfo = res.userInfo;
         }
       });
-
-      //location
-
-    // test
-    debugger
-this.test();
+ 
     },
     onLoad()
-    {
- debugger
-this.test();
+    { 
+       this.test();
     },
-
- async test()
-    {
-      debugger
-      var json = await api.test();
-    this.test =json.result.test;
-    }
+    async test()
+      {
+          debugger
+          var json = await api.test(); 
+          this.test =json.result.test;
+     }
   });
 
 </script>

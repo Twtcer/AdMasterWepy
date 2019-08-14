@@ -25,5 +25,5 @@ export const SEL_CLASS_CODE = "selClassCode";
  * Api Url
  * @type {String}
  */
-export const API_URL = "http://mini.frp.quick360.tech/";
-export const API_URL_TEST = "http://localhost:9216/";
+export const API_URL = "http://mini.frp.quick360.tech/data/";
+export const API_URL_TEST = "http://localhost:9216/data/";

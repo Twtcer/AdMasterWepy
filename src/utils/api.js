@@ -1,8 +1,10 @@
-import wxRequest from './wxRequest'
-import config from './constant'
+import {wxRequest} from './wxRequest'
+import {API_URL} from './constant'
+import {API_URL_TEST} from './constant'
 
 let debug = true
-const apiUrl = (debug === true ? config.API_URL_TEST : config.API_URL)
+
+const apiUrl = (debug === true ? API_URL_TEST : API_URL)
 
 // 广告 开始
 /**
@@ -21,7 +23,7 @@ const user2session = (params) => wxRequest(params, apiUrl + '/api/wechat/user2se
 // 用户 结束
 
 // test
-const test = (params) => wxRequest(params, apiUrl + 'AdManageService/Query')
+const test = (params) => wxRequest(params, apiUrl + 'WxOpenTest/Test')
 
 export default{
   getAdList,

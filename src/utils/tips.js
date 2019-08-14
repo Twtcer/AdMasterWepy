@@ -1,5 +1,3 @@
-Tips.isLoading = false;
-
 // 提示工具加载类
 export default class Tips {
     constructor() {
@@ -124,3 +122,6 @@ export default class Tips {
         };
     }
 }
+
+Tips.isLoading = false;
+

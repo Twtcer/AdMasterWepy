@@ -8,6 +8,7 @@ const TIMESTAMP = utils.getCurrentTime()
 const SIGN = md5.hex_md5((TIMESTAMP + API_SECRET_KEY).toLowerCase())
 
 const wxRequest = async (params = {}, url) => {
+  debugger
   tip.loading()
   let data = params.query || {}
   data.sign = SIGN
