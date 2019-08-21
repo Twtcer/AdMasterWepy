@@ -303,11 +303,11 @@ module.exports.getTime = getTime;
           self.userInfo = res.userInfo;
         }
       });
- 
+  this.test();
     },
     onLoad()
     { 
-       this.test();
+      
     },
     async test()
       {
